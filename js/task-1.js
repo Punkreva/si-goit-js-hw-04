@@ -1,9 +1,10 @@
-function isEnoughCapacity(products, containerSize) { // функція з двома параметрами ("products - обєкт", "containerSize - числове значення")
-  let totalProducts = 0; // оголошення "let" змінної для загальної кількості товарів
-    for (const key in products) { // цикл "for...in" для перебору ключів "key" в обє`кті "products"
-        totalProducts += products[key]; // виконується накопичення значень всіх ключів "products[key]" в змінну "totalProducts"
-    }
-    return totalProducts <= containerSize; // повернення функції (логічне порівння значень змінної "totalPrice" і параметру "containerSize") що попверне буль true/false
+function isEnoughCapacity(products, containerSize) {
+  let totalProducts = 0; // оголошення змінної для накопичення к-ті товарів
+ 
+  for (const product in products) { // цикл for..in для перебуру властивостей об`єкту та отримання значень влестивостей
+    totalProducts += products[product] // накопичення кожного значення влестивостей в змінну
+  }
+  return totalProducts <= containerSize; // повернення функції (перевірка на вмістимість кошику)
 }
 
 console.log(
